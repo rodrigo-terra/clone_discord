@@ -11,6 +11,7 @@
 body {
   font-family: "Open Sans";
   font-weight: 400;
+  font-size: 16px;
 }
 
 header {
@@ -20,12 +21,9 @@ header {
   align-content: center;
   height: 505px;
   background-image: url(../img/Header\ Background.png);
-  background-size: cover;
-  /* Faz a imagem cobrir toda a área */
-  background-position: center;
-  /* Centraliza a imagem */
-  background-repeat: no-repeat;
-  /* Evita repetições */
+  background-size: cover; /* Faz a imagem cobrir toda a área */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Evita repetições */
 }
 
 header #content-header {
@@ -55,8 +53,10 @@ header p {
 }
 
 header button {
+  font-family: "Open sans";
+  font-size: 16px;
   width: 381px;
-  height: 54;
+  height: 54px;
   border-radius: 28px;
   margin: 0 23.5px;
 }
@@ -118,3 +118,49 @@ main .content-section h1.titulo2 {
   font-weight: 400;
 }
 
+/* Versão PC */
+@media (min-width: 1280px) {
+  /* configuração do header */
+  header {
+    height: 459px;
+    
+  }
+
+  header #content-header {
+    width: 60%;
+    display: grid;
+    flex-direction: column;
+    justify-items: center;
+    grid-template-areas:
+      "titulo1 titulo1"
+      "texto1 texto1"
+      "botao1 botao2"
+    ;
+  }
+
+  header #content-header h1 {
+    grid-area: titulo1;
+    width: 313px;
+    height: 112px;
+    font-size: 56px;
+  }
+
+  header #content-header p {
+    grid-area: texto1;
+    width: 757px;
+    height: 66px;
+  }
+
+  header #content-header button:first-of-type {
+    grid-area: botao1;
+    display: inline-block;
+    width: auto;
+    height: auto;
+  }
+
+  header #content-header button:last-of-type {
+    grid-area: botao2;
+    width: auto;
+    height: auto; 
+  }
+}
